@@ -1,8 +1,14 @@
-# ES Énergies - Intégration Home Assistant
+<p align="center">
+  <img src="icon.png" width="128" height="128" alt="Logo ÉS Énergies x Home Assistant" />
+</p>
 
-[![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/hacs/default)
-[![GitHub release](https://img.shields.io/github/v/release/mateo08c/ha-es-energies?style=flat-square)](https://github.com/mateo08c/ha-es-energies/releases)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+<h1 align="center">ES Énergies - Intégration Home Assistant</h1>
+
+<p align="center">
+  <a href="https://github.com/hacs/default"><img src="https://img.shields.io/badge/HACS-Custom-orange.svg" alt="HACS" /></a>
+  <a href="https://github.com/mateo08c/ha-es-energies/releases"><img src="https://img.shields.io/github/v/release/mateo08c/ha-es-energies?style=flat-square" alt="GitHub release" /></a>
+  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT" /></a>
+</p>
 
 Intégration Home Assistant permettant de récupérer automatiquement les index, consommations, coûts et courbes de charge de vos compteurs d'électricité (**Linky**) et de **Gaz**, directement depuis l'Espace Client d'**Électricité de Strasbourg (ÉS)**.
 
