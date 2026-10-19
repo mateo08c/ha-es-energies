@@ -9,17 +9,19 @@ Intégration personnalisée Home Assistant pour récupérer automatiquement les 
 - **Configuration via l'interface graphique (Config Flow)** : Aucun fichier YAML requis !
 - **Prise en charge du 2FA dans l'interface** : Le code à 6 chiffres reçu par email est demandé directement dans une pop-up Home Assistant lors de la première installation.
 - **Zéro redemande de 2FA ensuite** : Sauvegarde de l'empreinte d'appareil de confiance (`device_id`) pour un renouvellement de session 100% transparent.
-- **Compatible Tableau de Bord Énergie (Energy Dashboard)** : L'entité `Index Compteur Linky` possède les classes `total_increasing` et `device_class: energy`.
-- **9 Capteurs créés automatiquement** :
-  - `sensor.compteur_linky_index_compteur_linky` (Index officiel en kWh)
-  - `sensor.compteur_linky_consommation_hier` (Conso de la veille en kWh)
-  - `sensor.compteur_linky_cout_hier` (Coût de la veille en € TTC)
-  - `sensor.compteur_linky_consommation_mois_en_cours` (Conso mensuelle en kWh)
-  - `sensor.compteur_linky_cout_mois_en_cours` (Coût mensuel en € TTC)
-  - `sensor.compteur_linky_prevision_conso_fin_de_mois` (Projection kWh fin de mois)
-  - `sensor.compteur_linky_prevision_facture_fin_de_mois` (Projection facture € fin de mois)
-  - `sensor.compteur_linky_puissance_maximale_atteinte` (Pmax atteinte en W)
-  - `sensor.compteur_linky_qualite_donnees_telereleve` (Qualité télérelève Linky en %)
+- **Compatible Tableau de Bord Énergie (Energy Dashboard)** : L'entité `Index de consommation` possède les classes `total_increasing` et `device_class: energy`.
+- **Plus de 18 capteurs créés automatiquement** (format `sensor.linky_<pdl>_<nom_capteur>`) :
+  - `sensor.linky_<pdl>_index_de_consommation` (Index officiel en kWh)
+  - `sensor.linky_<pdl>_consommation_d_hier` (Conso de la veille en kWh)
+  - `sensor.linky_<pdl>_cout_d_hier` (Coût de la veille en € TTC)
+  - `sensor.linky_<pdl>_consommation_du_mois` (Conso mensuelle en kWh)
+  - `sensor.linky_<pdl>_cout_du_mois` (Coût mensuel en € TTC)
+  - `sensor.linky_<pdl>_estimation_fin_de_mois` (Projection kWh fin de mois)
+  - `sensor.linky_<pdl>_facture_estimee_fin_de_mois` (Projection facture € fin de mois)
+  - `sensor.linky_<pdl>_puissance_maximale` (Pmax atteinte en W)
+  - `sensor.linky_<pdl>_courbe_de_charge` (Consommation de la veille au pas de 30 min)
+  - `sensor.linky_<pdl>_qualite_de_telereleve` (Qualité télérelève Linky en %)
+  - Et bien d'autres (température, DJU, empreinte carbone, talon veille, etc.)
 
 ---
 
