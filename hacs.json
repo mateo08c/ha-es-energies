@@ -1,0 +1,6 @@
+{
+  "name": "ES Énergies (Strasbourg - SuiviConso)",
+  "render_readme": true,
+  "filename": "custom_components/es_energies",
+  "homeassistant": "2024.1.0"
+}

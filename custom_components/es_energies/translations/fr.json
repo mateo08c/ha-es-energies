@@ -1,0 +1,34 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connexion à ES Énergies",
+        "description": "Saisissez les identifiants de votre Espace Client Électricité de Strasbourg (SuiviConso).\n\n*(Module communautaire non officiel et indépendant d'Électricité de Strasbourg. Vos identifiants sont stockés exclusivement en local sur votre serveur Home Assistant)*.",
+        "data": {
+          "email": "Adresse Email",
+          "password": "Mot de passe"
+        }
+      },
+      "2fa": {
+        "title": "Code de vérification ES Énergies",
+        "description": "Un code temporaire à 6 chiffres vient d'être envoyé par email à **{email}** par Électricité de Strasbourg.\n\n*(Ce code ne vous sera demandé qu'une seule fois grâce à l'enregistrement de votre appareil)*.",
+        "data": {
+          "2fa_code": "Code de sécurité (6 chiffres)"
+        }
+      },
+      "account_info": {
+        "title": "Compte ES Énergies connecté",
+        "description": "Connexion réussie ! Voici les informations de votre compte et de votre compteur détectées :\n\n- **Titulaire** : {customer_name}\n- **Email** : {email}\n- **N° Client / Site** : {person_id} / {site_id}\n- **Point de Livraison (PDL Linky)** : `{pdl}`\n- **Adresse du compteur** : {address}\n- **Compteur** : {meter_type} ({tariff_option} - {subscribed_power} kVA)\n- **Contrat Gaz actif** : {gas_status}\n\nCliquez sur **Valider** pour créer l'appareil et ses capteurs dans Home Assistant."
+      }
+    },
+    "error": {
+      "invalid_auth": "Identifiant ou mot de passe incorrect.",
+      "invalid_2fa": "Code de vérification incorrect ou expiré.",
+      "cannot_connect": "Échec de connexion au serveur ES Énergies."
+    },
+    "abort": {
+      "already_configured": "Ce compte ES Énergies est déjà configuré."
+    }
+  }
+}
+

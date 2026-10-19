@@ -1,0 +1,34 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to ES Énergies",
+        "description": "Enter your Électricité de Strasbourg (SuiviConso) customer account credentials.\n\n*(Unofficial and independent community integration. Your credentials are processed and stored exclusively locally on your Home Assistant instance)*.",
+        "data": {
+          "email": "Email Address",
+          "password": "Password"
+        }
+      },
+      "2fa": {
+        "title": "ES Énergies Verification Code",
+        "description": "A temporary 6-digit security code has been sent by Électricité de Strasbourg to **{email}**.\n\n*(You will only be prompted once as your device will be remembered)*.",
+        "data": {
+          "2fa_code": "Security Code (6 digits)"
+        }
+      },
+      "account_info": {
+        "title": "ES Énergies Account Connected",
+        "description": "Successfully authenticated! Here are your detected account and meter details:\n\n- **Account Holder**: {customer_name}\n- **Email**: {email}\n- **Customer / Site ID**: {person_id} / {site_id}\n- **Linky PDL Number**: `{pdl}`\n- **Meter Address**: {address}\n- **Meter**: {meter_type} ({tariff_option} - {subscribed_power} kVA)\n- **Active Gas Contract**: {gas_status}\n\nClick **Submit** to create the device and sensors in Home Assistant."
+      }
+    },
+    "error": {
+      "invalid_auth": "Invalid username or password.",
+      "invalid_2fa": "Invalid or expired verification code.",
+      "cannot_connect": "Failed to connect to ES Énergies servers."
+    },
+    "abort": {
+      "already_configured": "This ES Énergies account is already configured."
+    }
+  }
+}
+
