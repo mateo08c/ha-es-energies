@@ -83,8 +83,9 @@ async def async_setup_entry(
                 label = f"Index {k.lower()}"
                 entities.append(EsEnergyTariffHeadingIndexSensor(coordinator, entry, device_info, k, label))
 
-    # Gas sensors only if customer has an active gas contract
-    if summary.get("has_gas"):
+    # Gas sensors only if customer has an active gas contract and valid gas data
+    has_gas_data = bool(coordinator.data.get("gas_indexes") or coordinator.data.get("gas_daily") or coordinator.data.get("gas_monthly"))
+    if summary.get("has_gas") and has_gas_data:
         gas_pdl = summary.get("gas_pdl") or site_id
         gas_meter_type = summary.get("gas_meter_type") or "Gaz"
         gas_device_info = DeviceInfo(

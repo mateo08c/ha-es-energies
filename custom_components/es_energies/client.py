@@ -318,8 +318,9 @@ class EsEnergiesClient:
         pdl = sd.get("elecExternalId") or params.get("PRM_NUMBER") or "Non renseigné"
         meter_type = params.get("ELEC_METER_TYPE", "LINKY")
         first_com_date = params.get("METER_FIRST_COM_DATE", "")
-        has_gas = bool(params.get("GAS_EXTERNAL_ID")) or params.get("isGas") == "true"
-        gas_pdl = params.get("GAS_EXTERNAL_ID") or pdl
+        gas_ext_id = params.get("GAS_EXTERNAL_ID")
+        has_gas = (bool(gas_ext_id) and gas_ext_id != "Non renseigné") or (params.get("isGas") == "true")
+        gas_pdl = gas_ext_id if (gas_ext_id and gas_ext_id != "Non renseigné") else pdl
         gas_meter_type = params.get("GAS_METER_TYPE") or ("Gazpar" if params.get("isGas") == "true" else "Gaz")
 
         contracts = (self.contract_details or {}).get("contracts") or []
@@ -444,7 +445,8 @@ class EsEnergiesClient:
 
         # 7. Gas Consumptions (only if account has active gas contract)
         params = data.get("site_details", {}).get("parameters", {})
-        has_gas = bool(params.get("GAS_EXTERNAL_ID")) or (params.get("isGas") == "true")
+        gas_ext_id = params.get("GAS_EXTERNAL_ID")
+        has_gas = (bool(gas_ext_id) and gas_ext_id != "Non renseigné") or (params.get("isGas") == "true")
         if has_gas:
             gas_begin_str = (now - datetime.timedelta(days=7)).strftime("%Y-%m-%d")
             gas_end_str = now.strftime("%Y-%m-%d")
